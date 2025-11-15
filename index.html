@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ポートフォリオ | ShinCode</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">Portfolio</div>
+        <ul class="nav-menu">
+          <li><a href="#home">ホーム</a></li>
+          <li><a href="#about">自己紹介</a></li>
+          <li><a href="#skills">スキル</a></li>
+          <li><a href="#projects">プロジェクト</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-code-tag">&lt;developer&gt;</div>
+        <h1 class="hero-title">
+          <span class="hero-greeting">こんにちは、</span>
+          <span class="highlight">ShinCode</span>
+          <span class="hero-code-tag-inline">です</span>
+        </h1>
+        <div class="hero-typewriter">
+          <span class="typewriter-text">Web開発者</span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+        <p class="hero-description">
+          <span class="code-symbol">//</span>
+          美しく機能的なWebアプリケーションを作成します
+        </p>
+        <div class="hero-social">
+          <a
+            href="https://x.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link social-x"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+            <span>X</span>
+          </a>
+        </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <span>プロジェクトを見る</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>お問い合わせ</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- 自己紹介セクション -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">自己紹介</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="image-placeholder">
+              <span>写真</span>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+              はじめまして。Web開発とデザインに情熱を注ぐ開発者です。
+              ユーザー体験を最優先に考え、美しく使いやすいWebアプリケーションの開発を心がけています。
+            </p>
+            <p>
+              最新の技術トレンドを常に学び、実践的なプロジェクトを通じてスキルを向上させています。
+              フロントエンドからバックエンドまで、幅広い知識を持っています。
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">プロジェクト</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">年の経験</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">満足度</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- スキルセクション -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">スキル</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>フロントエンド</h3>
+            <ul>
+              <li>HTML5 / CSS3</li>
+              <li>JavaScript / TypeScript</li>
+              <li>React / Vue.js</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
+            <h3>バックエンド</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>Python</li>
+              <li>Database Design</li>
+              <li>API Development</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>デザイン</h3>
+            <ul>
+              <li>UI/UX Design</li>
+              <li>Figma</li>
+              <li>Adobe XD</li>
+              <li>Prototyping</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🛠️</div>
+            <h3>ツール</h3>
+            <ul>
+              <li>Git / GitHub</li>
+              <li>Docker</li>
+              <li>CI/CD</li>
+              <li>Testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- プロジェクトセクション -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">プロジェクト</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <div class="image-placeholder">プロジェクト画像</div>
+            </div>
+            <div class="project-content">
+              <h3>プロジェクト名 1</h3>
+              <p>
+                プロジェクトの説明がここに入ります。使用した技術や特徴などを簡潔に説明します。
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">デモを見る</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="image-placeholder">プロジェクト画像</div>
+            </div>
+            <div class="project-content">
+              <h3>プロジェクト名 2</h3>
+              <p>
+                プロジェクトの説明がここに入ります。使用した技術や特徴などを簡潔に説明します。
+              </p>
+              <div class="project-tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">デモを見る</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="image-placeholder">プロジェクト画像</div>
+            </div>
+            <div class="project-content">
+              <h3>プロジェクト名 3</h3>
+              <p>
+                プロジェクトの説明がここに入ります。使用した技術や特徴などを簡潔に説明します。
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">デモを見る</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="contact-description">
+          プロジェクトのご相談やお仕事のご依頼など、お気軽にお問い合わせください。
+        </p>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <h3>メール</h3>
+                <p>your.email@example.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">💼</div>
+              <div>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/yourprofile</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🐙</div>
+              <div>
+                <h3>GitHub</h3>
+                <p>github.com/yourusername</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">メッセージ</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 ShinCode. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#home">ホーム</a>
+          <a href="#about">自己紹介</a>
+          <a href="#skills">スキル</a>
+          <a href="#projects">プロジェクト</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
