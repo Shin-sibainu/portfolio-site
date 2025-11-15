@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>アダプトラボ | AI×Webサービス開発受託</title>
+    <meta
+      name="description"
+      content="アダプトラボはAIとWebサービスの統合開発に特化した専門チームです。戦略立案から開発・運用までワンストップで支援します。"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f2f7ff",
+                100: "#dae6ff",
+                200: "#b3cdff",
+                300: "#8bb3ff",
+                400: "#5d93ff",
+                500: "#2f73ff",
+                600: "#1c59e6",
+                700: "#1244b4",
+                800: "#0b307f",
+                900: "#061f54"
+              }
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans">
+    <div class="relative min-h-screen overflow-hidden">
+      <div
+        class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-brand-900 via-slate-950 to-slate-900 opacity-90"
+      ></div>
+      <div class="absolute inset-x-0 top-[-200px] -z-10 h-[500px]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(83,132,255,0.35)_0,transparent_55%)]"></div>
+      </div>
+
+      <header class="border-b border-white/10 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <div class="flex items-center gap-3">
+            <span
+              class="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-xl font-semibold text-white"
+              >A</span
+            >
+            <div>
+              <p class="text-lg font-semibold tracking-tight">アダプトラボ</p>
+              <p class="text-xs text-slate-400">AI × Webサービス開発スタジオ</p>
+            </div>
+          </div>
+          <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+            <a href="#services" class="transition hover:text-white">サービス</a>
+            <a href="#cases" class="transition hover:text-white">実績</a>
+            <a href="#process" class="transition hover:text-white">進め方</a>
+            <a href="#tech" class="transition hover:text-white">技術スタック</a>
+            <a href="#contact" class="transition hover:text-white">お問い合わせ</a>
+          </nav>
+          <a
+            href="#contact"
+            class="hidden rounded-full bg-brand-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-400 md:block"
+            >無料相談</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <section class="px-6 py-20 md:py-28">
+          <div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+            <div class="space-y-8">
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300"
+                >AI Service Development Partner</span
+              >
+              <h1 class="text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
+                AI × Webサービス開発で、<br class="hidden md:block" />
+                事業成長の速度を最大化する。
+              </h1>
+              <p class="text-lg leading-relaxed text-slate-300 md:text-xl">
+                戦略立案からPoC、スケールまで。AIの研究開発とWebサービス構築をワンストップで提供し、スピード感ある事業創出を支援します。
+                B2B SaaS・toCプロダクト・業務改善ツールなど幅広い領域で実績を重ねています。
+              </p>
+              <div class="flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="#contact"
+                  class="flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-400"
+                >
+                  無料で相談する
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25v-3m0 0h-3m3 0L6.75 15.75m0 0h3m-3 0v3" />
+                  </svg>
+                </a>
+                <a
+                  href="#cases"
+                  class="flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/30 hover:text-white"
+                >
+                  実績を見る
+                </a>
+              </div>
+              <dl class="grid gap-6 sm:grid-cols-3">
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">累計プロジェクト</dt>
+                  <dd class="mt-2 text-3xl font-semibold text-white">120+</dd>
+                </div>
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">平均ROI向上</dt>
+                  <dd class="mt-2 text-3xl font-semibold text-white">185%</dd>
+                </div>
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">継続率</dt>
+                  <dd class="mt-2 text-3xl font-semibold text-white">92%</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="relative">
+              <div class="absolute inset-0 -rotate-6 rounded-3xl bg-gradient-to-br from-brand-500/30 via-brand-400/20 to-transparent blur-2xl"></div>
+              <div class="relative rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-brand-900/30 backdrop-blur">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-lg font-semibold text-white">ソリューションアーキテクトによる伴走</h2>
+                  <span class="rounded-full bg-brand-500/20 px-3 py-1 text-xs font-semibold text-brand-200">End-to-End</span>
+                </div>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  スプリントごとに明確な成果物とロードマップを提示し、技術選定からビジネスサイドの検証まで専任チームが伴走します。
+                </p>
+                <ul class="mt-6 space-y-4 text-sm text-slate-200">
+                  <li class="flex items-start gap-3">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
+                    <div>
+                      <p class="font-semibold text-white">AIストラテジー設計</p>
+                      <p class="text-slate-300">課題整理から価値仮説・KPI設定まで、事業戦略と連動したテック戦略を策定。</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
+                    <div>
+                      <p class="font-semibold text-white">MLOps × SaaS基盤構築</p>
+                      <p class="text-slate-300">LLM・生成AIを含むモデル運用とWebアプリのスケールを一体で最適化。</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
+                    <div>
+                      <p class="font-semibold text-white">グロースと改善サイクル</p>
+                      <p class="text-slate-300">定量/定性データを活用した改善サイクルで継続的にプロダクト価値を向上。</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="border-t border-white/5 bg-slate-950/60 px-6 py-20">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Services</p>
+                <h2 class="mt-2 text-3xl font-semibold text-white md:text-4xl">事業目的に沿った一貫支援</h2>
+              </div>
+              <p class="max-w-xl text-sm leading-relaxed text-slate-300">
+                課題定義からプロトタイプ、スケールまでそれぞれのフェーズに応じた専任チームが支援します。プロジェクトごとにビジネス視点と高度な技術力を両立させ、ROIとスピードを両立。
+              </p>
+            </div>
+            <div class="grid gap-8 md:grid-cols-3">
+              <article class="flex flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Strategy</span>
+                <h3 class="mt-4 text-2xl font-semibold text-white">AIストラテジー設計</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  業界分析・データ資産評価を通じて、事業戦略と連動したAI活用ロードマップを策定。PoCの成功確率と投資判断の精度を高めます。
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-slate-300">
+                  <li>・AI導入戦略ワークショップ</li>
+                  <li>・データアセスメント</li>
+                  <li>・KPIとROIモデル設計</li>
+                </ul>
+              </article>
+              <article class="flex flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Delivery</span>
+                <h3 class="mt-4 text-2xl font-semibold text-white">プロダクト開発</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  LLM・生成AIを活用したSaaS/業務アプリケーションのフロントエンドからバックエンド、モバイル、インフラまで一気通貫で開発します。
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-slate-300">
+                  <li>・UI/UXデザイン</li>
+                  <li>・LLM/RAG/MLOps実装</li>
+                  <li>・クラウドネイティブアーキテクチャ</li>
+                </ul>
+              </article>
+              <article class="flex flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Growth</span>
+                <h3 class="mt-4 text-2xl font-semibold text-white">運用・成長支援</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  リリース後のユーザー分析と機能改善、モデル再学習やA/Bテストを通じて継続的な価値提供を支援。SLA設計やセキュリティにも対応。
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-slate-300">
+                  <li>・データドリブンな改善</li>
+                  <li>・技術サポート窓口</li>
+                  <li>・セキュリティ/ガバナンス強化</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="cases" class="px-6 py-20">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Case Studies</p>
+                <h2 class="mt-2 text-3xl font-semibold text-white md:text-4xl">共創による成果</h2>
+              </div>
+              <p class="max-w-xl text-sm leading-relaxed text-slate-300">
+                様々な業界の企業様と共に、ビジネスインパクトを重視したAI×Webプロダクトを創出してきました。ここでは一部の事例をご紹介します。
+              </p>
+            </div>
+            <div class="grid gap-8 md:grid-cols-3">
+              <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Financial</span>
+                  <span class="text-xs text-slate-400">AI与信SaaS</span>
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white">中堅金融機関の審査自動化</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  既存審査プロセスと生成AIを組み合わせたハイブリッド与信エンジンを構築。審査時間を65%短縮し、不正検知率を19%向上。
+                </p>
+                <dl class="mt-6 space-y-2 text-xs text-slate-400">
+                  <div class="flex justify-between">
+                    <dt>KPI達成</dt>
+                    <dd class="text-slate-200">3か月</dd>
+                  </div>
+                  <div class="flex justify-between">
+                    <dt>ROI</dt>
+                    <dd class="text-slate-200">+204%</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Retail</span>
+                  <span class="text-xs text-slate-400">AI店舗運営</span>
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white">チェーン小売の需要予測</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  LLMを活用した売場担当向けダッシュボードと、需要予測モデルをクラウド上で運用。廃棄削減により粗利が28%改善。
+                </p>
+                <dl class="mt-6 space-y-2 text-xs text-slate-400">
+                  <div class="flex justify-between">
+                    <dt>導入期間</dt>
+                    <dd class="text-slate-200">5か月</dd>
+                  </div>
+                  <div class="flex justify-between">
+                    <dt>店舗数</dt>
+                    <dd class="text-slate-200">120店舗</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Healthcare</span>
+                  <span class="text-xs text-slate-400">AIリサーチ支援</span>
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white">医薬研究のナレッジ活用</h3>
+                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                  医学論文と社内知見を接続したRAGプラットフォームを構築。検索時間を80%削減し、洞察レポートの作成時間も半分に。
+                </p>
+                <dl class="mt-6 space-y-2 text-xs text-slate-400">
+                  <div class="flex justify-between">
+                    <dt>検索時間削減</dt>
+                    <dd class="text-slate-200">-80%</dd>
+                  </div>
+                  <div class="flex justify-between">
+                    <dt>導入部門</dt>
+                    <dd class="text-slate-200">6部門</dd>
+                  </div>
+                </dl>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" class="border-y border-white/5 bg-slate-950/60 px-6 py-20">
+          <div class="mx-auto flex max-w-6xl flex-col gap-12 md:flex-row md:items-start">
+            <div class="md:w-1/3">
+              <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Process</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white md:text-4xl">成功に直結するプロセス</h2>
+              <p class="mt-6 text-sm leading-relaxed text-slate-300">
+                各フェーズで経営者・プロダクトオーナーと並走しながら、迅速に仮説検証と価値創出を実現します。透明性の高いレポーティングとコミュニケーションを重視。
+              </p>
+            </div>
+            <ol class="flex-1 space-y-8">
+              <li class="relative rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="absolute -left-12 top-8 hidden h-12 w-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-xl font-semibold text-white md:grid place-items-center">
+                  1
+                </div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Discover</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">戦略ワークショップ</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">
+                  ビジネス目標の明確化、ユーザーニーズの把握、データアクセス状況の整理を行い、最小実装範囲を定義します。
+                </p>
+              </li>
+              <li class="relative rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="absolute -left-12 top-8 hidden h-12 w-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-xl font-semibold text-white md:grid place-items-center">
+                  2
+                </div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Pilot</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">PoC / プロトタイプ開発</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">
+                  2〜4週間の短期スプリントで価値検証。LLMやRAGを活用した体験価値を具現化し、ビジネス指標で成果を測定。
+                </p>
+              </li>
+              <li class="relative rounded-3xl border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/30">
+                <div class="absolute -left-12 top-8 hidden h-12 w-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-xl font-semibold text-white md:grid place-items-center">
+                  3
+                </div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">Scale</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">本番実装と運用最適化</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">
+                  セキュリティ・ガバナンス要件を満たしたアーキテクチャに移行し、MLOpsとSRE体制で継続的な改善と安定稼働を支援。
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="tech" class="px-6 py-20">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Technology</p>
+                <h2 class="mt-2 text-3xl font-semibold text-white md:text-4xl">フルスタックな技術力</h2>
+              </div>
+              <p class="max-w-xl text-sm leading-relaxed text-slate-300">
+                生成AI、クラウド、モダンフロントエンド、データ基盤まで幅広い専門性を持つチームがプロジェクトを支援。要件に応じて最適なスタックを選定します。
+              </p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-4">
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-brand-200">AI / ML</p>
+                <p class="mt-3 text-sm text-slate-200">OpenAI, Claude, Vertex AI, Bedrock, Hugging Face Transformers, LangChain, LlamaIndex</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Web</p>
+                <p class="mt-3 text-sm text-slate-200">Next.js, Remix, React, Vue, TypeScript, Tailwind CSS</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Cloud / Data</p>
+                <p class="mt-3 text-sm text-slate-200">AWS, GCP, Azure, Snowflake, BigQuery, dbt, Supabase, Firebase</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Ops / Security</p>
+                <p class="mt-3 text-sm text-slate-200">MLOps, GitHub Actions, Terraform, Docker, Kubernetes, SOC2, ISMS準拠</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-y border-white/5 bg-slate-950/60 px-6 py-20">
+          <div class="mx-auto max-w-6xl">
+            <div class="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Clients</p>
+                <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">信頼される共創パートナー</h2>
+                <p class="mt-6 text-sm leading-relaxed text-slate-300">
+                  上場企業からスタートアップまで多様な業界のパートナーと共創。技術力とビジネス視点を兼ね備えたプロジェクト運営で高い継続率を実現しています。
+                </p>
+                <div class="mt-8 grid gap-6 text-sm text-slate-200 sm:grid-cols-2">
+                  <div class="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 shadow">
+                    <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Voice</p>
+                    <p class="text-sm leading-relaxed text-slate-200">
+                      「技術検証から本番運用まで一気通貫で支援いただき、社内の意思決定スピードが圧倒的に上がりました。」
+                    </p>
+                    <p class="text-xs text-slate-400">大手金融グループ DX推進部 部長</p>
+                  </div>
+                  <div class="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 shadow">
+                    <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Voice</p>
+                    <p class="text-sm leading-relaxed text-slate-200">
+                      「AIの専門性だけでなくUX設計まで踏み込んで提案いただき、ユーザーの定着率が大きく改善しました。」
+                    </p>
+                    <p class="text-xs text-slate-400">SaaSスタートアップ 代表取締役</p>
+                  </div>
+                </div>
+              </div>
+              <div class="grid gap-6 rounded-3xl border border-white/5 bg-white/5 p-10 text-sm text-slate-200 shadow-lg shadow-black/20">
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                  <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Engagement Model</p>
+                  <ul class="mt-4 space-y-2">
+                    <li>・戦略パートナー契約（CxO直轄）</li>
+                    <li>・共創型PoC（3か月〜）</li>
+                    <li>・専任プロダクトチーム支援</li>
+                    <li>・技術顧問/アドバイザリー</li>
+                  </ul>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                  <p class="text-xs uppercase tracking-[0.2em] text-brand-200">Team</p>
+                  <ul class="mt-4 space-y-2">
+                    <li>・AIリサーチャー / MLE</li>
+                    <li>・フルスタックエンジニア</li>
+                    <li>・プロダクトマネージャー</li>
+                    <li>・UI/UXデザイナー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="px-6 py-20">
+          <div class="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-gradient-to-br from-brand-600/30 via-slate-900/80 to-slate-950/80 p-10 shadow-2xl shadow-brand-900/30">
+            <div class="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-brand-200">Contact</p>
+                <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">まずは30分の相談から</h2>
+                <p class="mt-6 text-sm leading-relaxed text-slate-200">
+                  課題の整理やアイデアの仮説検証など、どのフェーズからでもご相談ください。オンラインでの初回ヒアリングは無料です。
+                </p>
+                <div class="mt-8 space-y-3 text-sm text-slate-200">
+                  <p class="flex items-center gap-3">
+                    <span class="h-2 w-2 rounded-full bg-brand-400"></span>
+                    平日 10:00〜19:00（オンライン/オンサイト対応）
+                  </p>
+                  <p class="flex items-center gap-3">
+                    <span class="h-2 w-2 rounded-full bg-brand-400"></span>
+                    NDA締結前提の機密相談も対応可能
+                  </p>
+                </div>
+              </div>
+              <form class="space-y-5">
+                <div>
+                  <label for="name" class="block text-xs uppercase tracking-[0.2em] text-slate-300">御社名 / ご担当者名</label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="例：株式会社アダプトラボ / 山田 太郎"
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs uppercase tracking-[0.2em] text-slate-300">メールアドレス</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="例：contact@example.com"
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+                  />
+                </div>
+                <div>
+                  <label for="topic" class="block text-xs uppercase tracking-[0.2em] text-slate-300">ご相談内容</label>
+                  <select
+                    id="topic"
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+                  >
+                    <option>AI戦略の検討</option>
+                    <option>PoC / プロトタイプ開発</option>
+                    <option>既存サービスの改善</option>
+                    <option>その他のご相談</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="message" class="block text-xs uppercase tracking-[0.2em] text-slate-300">詳細・課題感</label>
+                  <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="現状の課題や実現したいことをご記入ください。"
+                    class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-400"
+                >
+                  相談内容を送信する
+                </button>
+                <p class="text-[11px] leading-relaxed text-slate-400">
+                  送信いただいた情報は、お問い合わせへのご対応以外の目的では利用いたしません。プライバシーポリシーに基づき適切に取り扱います。
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 bg-slate-950/80">
+        <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-white">株式会社アダプトラボ</p>
+            <p class="mt-2 text-sm text-slate-400">
+              〒150-0001 東京都渋谷区神宮前1-1-1<br />
+              contact@adaptlab.co.jp / 03-1234-5678
+            </p>
+          </div>
+          <div class="text-sm text-slate-500">
+            <p>© 2025 Adapt Lab Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
