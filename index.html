@@ -3,690 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI×Web開発 | プロフェッショナルな開発受託サービス</title>
+    <title>AI×Webサービス開発受託 | TechVision Solutions</title>
+    <meta name="description" content="AI技術とWebサービス開発の専門企業。受託開発により、お客様のビジネスを革新するソリューションを提供いたします。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    },
                     colors: {
-                        'primary': '#2563eb',
-                        'secondary': '#7c3aed',
-                        'accent': '#06b6d4',
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a'
+                        }
                     }
                 }
             }
         }
     </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.6); }
-        }
-        .pulse-glow {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="font-sans text-gray-900 bg-white">
-    
-    <!-- ナビゲーション -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary-600">TechVision Solutions</h1>
                     </div>
-                    <span class="text-xl font-bold text-gray-900">AI<span class="gradient-text">Tech</span> Solutions</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">サービス</a>
-                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors font-medium">強み</a>
-                    <a href="#technology" class="text-gray-700 hover:text-primary transition-colors font-medium">技術</a>
-                    <a href="#company" class="text-gray-700 hover:text-primary transition-colors font-medium">会社概要</a>
-                    <a href="#contact" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity font-medium">お問い合わせ</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary-600 transition duration-300">会社概要</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary-600 transition duration-300">サービス</a>
+                    <a href="#technology" class="text-gray-700 hover:text-primary-600 transition duration-300">技術</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-600 transition duration-300">お問い合わせ</a>
                 </div>
-                <button class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">会社概要</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary-600">サービス</a>
+                <a href="#technology" class="block px-3 py-2 text-gray-700 hover:text-primary-600">技術</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">お問い合わせ</a>
             </div>
         </div>
     </nav>
 
-    <!-- ヒーローセクション -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden relative">
-        <!-- 背景装飾 -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 float-animation"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 float-animation" style="animation-delay: 2s;"></div>
-        
-        <div class="max-w-7xl mx-auto relative">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-block mb-4 px-4 py-2 bg-blue-100 text-primary rounded-full text-sm font-semibold">
-                        🚀 最先端のAI×Web開発
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                        <span class="text-gray-900">ビジネスを</span><br>
-                        <span class="gradient-text">AI</span><span class="text-gray-900">で</span><span class="gradient-text">加速</span><span class="text-gray-900">する</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        最新のAI技術とWeb開発のプロフェッショナルが、<br>
-                        貴社のビジネス課題を解決し、競争力を高めます。
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="px-8 py-4 gradient-bg text-white rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl text-center">
-                            無料相談を予約
-                        </a>
-                        <a href="#services" class="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all border-2 border-gray-900 text-center">
-                            サービスを見る
-                        </a>
-                    </div>
-                    <div class="mt-12 flex items-center gap-8">
-                        <div>
-                            <div class="text-3xl font-bold text-gray-900">100+</div>
-                            <div class="text-sm text-gray-600">プロジェクト実績</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-gray-900">98%</div>
-                            <div class="text-sm text-gray-600">顧客満足度</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-gray-900">24h</div>
-                            <div class="text-sm text-gray-600">サポート対応</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="relative">
-                        <div class="w-full h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl shadow-2xl pulse-glow overflow-hidden">
-                            <div class="absolute inset-0 bg-black/10"></div>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <svg class="w-48 h-48 text-white opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <!-- コードブロック風装飾 -->
-                            <div class="absolute top-8 left-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white font-mono text-sm">
-                                <div class="text-cyan-300">const</div>
-                                <div class="ml-4 text-yellow-300">AI = innovate()</div>
-                            </div>
-                            <div class="absolute bottom-8 right-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white font-mono text-sm">
-                                <div class="text-green-300">✓ Build Success</div>
-                                <div class="text-gray-300 text-xs">Deployed in 2.3s</div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="pt-16 bg-gradient-to-br from-primary-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    AI×Webサービス開発の
+                    <span class="text-primary-600">プロフェッショナル</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    最新のAI技術とWebサービス開発で、お客様のビジネスを革新します。<br>
+                    受託開発により、確実で高品質なソリューションを提供いたします。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition duration-300">
+                        無料相談を申し込む
+                    </a>
+                    <a href="#services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition duration-300">
+                        サービス詳細を見る
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- サービスセクション -->
-    <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">提供サービス</span>
-                </h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">会社概要</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    AI技術とWeb開発の融合で、貴社のビジネスに革新をもたらします
+                    AI技術とWeb開発の融合により、革新的なソリューションを提供する専門企業です。
                 </p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- AI開発 -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
-                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
+                <div class="text-center">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-3xl text-primary-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">AI開発</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        機械学習、自然言語処理、画像認識など、最新のAI技術を活用したシステム開発を提供します。
+                    <h3 class="text-2xl font-semibold mb-4">AI技術の専門性</h3>
+                    <p class="text-gray-600">
+                        最新のAI技術を活用し、ビジネス課題の解決と業務効率化を実現します。
                     </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            ChatGPT連携開発
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            データ分析・予測モデル
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            業務自動化ツール
-                        </li>
-                    </ul>
                 </div>
-
-                <!-- Web開発 -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
-                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
+                <div class="text-center">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-3xl text-primary-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Web開発</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        モダンな技術スタックで、スケーラブルで高性能なWebアプリケーションを構築します。
+                    <h3 class="text-2xl font-semibold mb-4">Web開発の卓越性</h3>
+                    <p class="text-gray-600">
+                        モダンな技術スタックを用いた高品質なWebアプリケーションを開発します。
                     </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            React/Next.js開発
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            API設計・開発
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            レスポンシブデザイン
-                        </li>
-                    </ul>
                 </div>
-
-                <!-- コンサルティング -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
-                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
+                <div class="text-center">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-3xl text-primary-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">技術コンサルティング</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        技術選定から運用まで、プロジェクト全体をサポート。最適なソリューションを提案します。
+                    <h3 class="text-2xl font-semibold mb-4">受託開発の信頼性</h3>
+                    <p class="text-gray-600">
+                        お客様とのパートナーシップを重視し、確実なプロジェクト遂行を約束します。
                     </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            技術選定支援
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            アーキテクチャ設計
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            保守・運用サポート
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 強みセクション -->
-    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">選ばれる理由</span>
-                </h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">サービス内容</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    豊富な実績と最新技術で、貴社のプロジェクトを成功に導きます
+                    AI×Webサービスの総合的なソリューションを提供いたします。
                 </p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-gray-900">最速の開発スピード</h3>
-                            <p class="text-gray-600">AI支援開発と効率的なプロセスで、従来の半分の期間で高品質なシステムを提供します。</p>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-2xl text-primary-600"></i>
                     </div>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-gray-900">万全のセキュリティ</h3>
-                            <p class="text-gray-600">ISO27001準拠の開発プロセスで、お客様のデータと資産を確実に保護します。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-gray-900">経験豊富なチーム</h3>
-                            <p class="text-gray-600">大手企業からスタートアップまで、100社以上のプロジェクトを成功させた実績があります。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-gray-900">明瞭な料金体系</h3>
-                            <p class="text-gray-600">事前見積もりから追加費用まで、すべて透明性のある料金設定で安心してご依頼いただけます。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 技術スタックセクション -->
-    <section id="technology" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">技術スタック</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    最新かつ実績のある技術を組み合わせ、最適なソリューションを提供
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6">
-                <!-- AI/ML -->
-                <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-gray-100">
-                    <h3 class="text-lg font-bold mb-4 text-gray-900">AI / ML</h3>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                            OpenAI API
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                            TensorFlow
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                            PyTorch
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                            LangChain
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Frontend -->
-                <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-gray-100">
-                    <h3 class="text-lg font-bold mb-4 text-gray-900">Frontend</h3>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-                            React / Next.js
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-                            TypeScript
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-                            Tailwind CSS
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-                            Vue.js
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Backend -->
-                <div class="bg-gradient-to-br from-cyan-50 to-white rounded-xl p-6 border border-gray-100">
-                    <h3 class="text-lg font-bold mb-4 text-gray-900">Backend</h3>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                            Node.js
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                            Python / FastAPI
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                            Go
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                            GraphQL / REST
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Infrastructure -->
-                <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 border border-gray-100">
-                    <h3 class="text-lg font-bold mb-4 text-gray-900">Infrastructure</h3>
-                    <ul class="space-y-2 text-gray-600 text-sm">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                            AWS / Azure
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                            Docker / K8s
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                            PostgreSQL
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                            Redis
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 開発フローセクション -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">開発フロー</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    アジャイル開発手法で、スピーディーかつ柔軟にプロジェクトを進行
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-4">
-                <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
-                    <h3 class="font-bold mb-2 text-gray-900">ヒアリング</h3>
-                    <p class="text-sm text-gray-600">課題と目標を詳しくお聞きします</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-                    <div class="w-12 h-12 bg-purple-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
-                    <h3 class="font-bold mb-2 text-gray-900">提案</h3>
-                    <p class="text-sm text-gray-600">最適なソリューションを提案</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-                    <div class="w-12 h-12 bg-cyan-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                    <h3 class="font-bold mb-2 text-gray-900">設計</h3>
-                    <p class="text-sm text-gray-600">詳細な設計書を作成</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">4</div>
-                    <h3 class="font-bold mb-2 text-gray-900">開発</h3>
-                    <p class="text-sm text-gray-600">アジャイル手法で開発</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">5</div>
-                    <h3 class="font-bold mb-2 text-gray-900">納品</h3>
-                    <p class="text-sm text-gray-600">リリース後もサポート</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 会社概要セクション -->
-    <section id="company" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">会社概要</span>
-                </h2>
-            </div>
-
-            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg">
-                <div class="divide-y divide-gray-200">
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">社名</div>
-                        <div class="md:col-span-2 text-gray-900">株式会社 AITech Solutions</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">代表者</div>
-                        <div class="md:col-span-2 text-gray-900">代表取締役 山田 太郎</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">設立</div>
-                        <div class="md:col-span-2 text-gray-900">2020年4月1日</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">資本金</div>
-                        <div class="md:col-span-2 text-gray-900">5,000万円</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">所在地</div>
-                        <div class="md:col-span-2 text-gray-900">〒150-0001 東京都渋谷区神宮前1-2-3 テックビル8F</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">事業内容</div>
-                        <div class="md:col-span-2 text-gray-900">
-                            <ul class="space-y-1">
-                                <li>• AI技術を活用したシステム開発</li>
-                                <li>• Webアプリケーション開発</li>
-                                <li>• 技術コンサルティング</li>
-                                <li>• DX推進支援</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4 p-6">
-                        <div class="font-semibold text-gray-700">従業員数</div>
-                        <div class="md:col-span-2 text-gray-900">25名(2025年11月現在)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- お問い合わせセクション -->
-    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="max-w-4xl mx-auto relative z-10">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">お問い合わせ</h2>
-                <p class="text-xl text-blue-100">
-                    プロジェクトのご相談、お見積もりなど<br>まずはお気軽にご連絡ください
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">会社名</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="株式会社サンプル">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">お名前 <span class="text-red-500">*</span></label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="山田 太郎">
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">メールアドレス <span class="text-red-500">*</span></label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="example@company.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">電話番号</label>
-                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="03-1234-5678">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">ご相談内容 <span class="text-red-500">*</span></label>
-                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-700">
-                            <option value="">選択してください</option>
-                            <option value="ai">AI開発について</option>
-                            <option value="web">Web開発について</option>
-                            <option value="consulting">コンサルティングについて</option>
-                            <option value="other">その他</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">メッセージ <span class="text-red-500">*</span></label>
-                        <textarea required rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none" placeholder="プロジェクトの詳細やご予算、納期などをお聞かせください"></textarea>
-                    </div>
-
-                    <div class="flex items-start">
-                        <input type="checkbox" id="privacy" required class="mt-1 mr-2">
-                        <label for="privacy" class="text-sm text-gray-600">
-                            <a href="#" class="text-primary hover:underline">プライバシーポリシー</a>に同意します
-                        </label>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 gradient-bg text-white rounded-lg font-bold text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">
-                        送信する
-                    </button>
-                </form>
-
-                <div class="mt-8 pt-8 border-t border-gray-200">
-                    <div class="grid md:grid-cols-3 gap-6 text-center">
-                        <div>
-                            <div class="text-4xl mb-2">📧</div>
-                            <div class="text-sm font-semibold text-gray-700">メール</div>
-                            <div class="text-sm text-gray-600">info@aitech.jp</div>
-                        </div>
-                        <div>
-                            <div class="text-4xl mb-2">📞</div>
-                            <div class="text-sm font-semibold text-gray-700">電話</div>
-                            <div class="text-sm text-gray-600">03-1234-5678</div>
-                        </div>
-                        <div>
-                            <div class="text-4xl mb-2">⏰</div>
-                            <div class="text-sm font-semibold text-gray-700">受付時間</div>
-                            <div class="text-sm text-gray-600">平日 9:00-18:00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <span class="text-lg font-bold">AITech Solutions</span>
-                    </div>
-                    <p class="text-gray-400 text-sm">
-                        AI×Webで、ビジネスに革新を
+                    <h3 class="text-xl font-semibold mb-4">AIソリューション開発</h3>
+                    <p class="text-gray-600 mb-6">
+                        機械学習、自然言語処理、画像認識などのAI技術を活用したカスタムソリューションの開発を行います。
                     </p>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">サービス</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#services" class="hover:text-white transition-colors">AI開発</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Web開発</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">コンサルティング</a></li>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• ビジネスデータ分析</li>
+                        <li>• 自動化システム</li>
+                        <li>• 予測モデル構築</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="font-bold mb-4">会社情報</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#company" class="hover:text-white transition-colors">会社概要</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">採用情報</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">お知らせ</a></li>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Webアプリケーション開発</h3>
+                    <p class="text-gray-600 mb-6">
+                        最新のフレームワークを使用したスケーラブルで保守性の高いWebアプリケーションを開発します。
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• React/Next.js開発</li>
+                        <li>• API開発</li>
+                        <li>• データベース設計</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="font-bold mb-4">お問い合わせ</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li>📧 info@aitech.jp</li>
-                        <li>📞 03-1234-5678</li>
-                        <li>📍 東京都渋谷区神宮前1-2-3</li>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">モバイルアプリ開発</h3>
+                    <p class="text-gray-600 mb-6">
+                        iOS/Android両対応のネイティブアプリ、またはクロスプラットフォームアプリの開発を行います。
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• React Native開発</li>
+                        <li>• Flutter開発</li>
+                        <li>• ネイティブアプリ開発</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">クラウドインフラ構築</h3>
+                    <p class="text-gray-600 mb-6">
+                        AWS/Azure/GCPなどのクラウドプラットフォームを活用したインフラ設計・構築を行います。
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• サーバーレスアーキテクチャ</li>
+                        <li>• マイクロサービス設計</li>
+                        <li>• DevOps実装</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">データ分析・BIツール</h3>
+                    <p class="text-gray-600 mb-6">
+                        ビジネスデータを活用した分析システムやダッシュボードの開発を行います。
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• データウェアハウス構築</li>
+                        <li>• BIダッシュボード開発</li>
+                        <li>• ETL処理実装</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">セキュリティコンサルティング</h3>
+                    <p class="text-gray-600 mb-6">
+                        アプリケーションのセキュリティ診断と改善策のご提案、セキュリティシステムの構築を行います。
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• セキュリティ診断</li>
+                        <li>• 脆弱性対策</li>
+                        <li>• コンプライアンス対応</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">&copy; 2025 AITech Solutions. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">プライバシーポリシー</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">利用規約</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">特定商取引法</a>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">技術スタック</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    最新技術を積極的に取り入れ、高品質なソリューションを提供いたします。
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-600">Frontend</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>React / Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                        <li>Vue.js</li>
+                    </ul>
                 </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-600">Backend</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Go</li>
+                        <li>Ruby on Rails</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-600">AI/ML</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>OpenAI API</li>
+                        <li>Hugging Face</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-600">Infrastructure</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>AWS</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>Terraform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">お問い合わせ</h2>
+                <p class="text-xl text-primary-100 max-w-2xl mx-auto">
+                    プロジェクトのご相談やお見積もりのご依頼など、お気軽にお問い合わせください。
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">お問い合わせ情報</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-primary-300 w-6 mr-4"></i>
+                            <span>contact@techvision-solutions.jp</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-primary-300 w-6 mr-4"></i>
+                            <span>03-1234-5678</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary-300 w-6 mr-4"></i>
+                            <span>東京都渋谷区</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-primary-300 w-6 mr-4"></i>
+                            <span>平日 9:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">会社名</label>
+                            <input type="text" class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500" placeholder="株式会社Example">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">お名前</label>
+                            <input type="text" class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500" placeholder="山田太郎">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">メールアドレス</label>
+                            <input type="email" class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500" placeholder="example@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">お問い合わせ内容</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500" placeholder="プロジェクトの内容やご相談事項をご記入ください"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition duration-300">
+                            送信する
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">TechVision Solutions</h3>
+                    <p class="text-gray-300 mb-4">
+                        AI×Webサービス開発のプロフェッショナル企業として、<br>
+                        お客様のビジネス革新を全力でサポートいたします。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition duration-300">AIソリューション</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Web開発</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">モバイル開発</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">クラウドインフラ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">会社情報</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition duration-300">会社概要</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">採用情報</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechVision Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- スクロールトップボタン -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 gradient-bg text-white rounded-full shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center z-40">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-        </svg>
-    </button>
-
     <script>
-        // スムーススクロール
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -696,30 +396,10 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
                 }
             });
-        });
-
-        // フォーム送信処理
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('お問い合わせありがとうございます。\n担当者より3営業日以内にご連絡させていただきます。');
-            this.reset();
-        });
-
-        // スクロールでナビゲーションのスタイルを変更
-        let lastScroll = 0;
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
-            }
-            
-            lastScroll = currentScroll;
         });
     </script>
 
